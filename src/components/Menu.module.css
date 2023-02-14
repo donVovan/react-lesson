@@ -1,0 +1,7 @@
+.menu {
+    grid-area: menu;
+    background-color: #ccc;
+}
+.item {
+    color: black;
+}

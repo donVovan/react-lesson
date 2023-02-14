@@ -59,26 +59,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 80px 5px 80px 5px 1fr 5px 80px 5px 80px;
 }
-.header {
-  grid-area: header;
-  background-color: #bbb;
-}
-.menu {
-  grid-area: menu;
-  background-color: #ccc;
-}
-.sidebar {
-  grid-area: sidebar;
-  background-color: #ccc;
-}
-.content {
-  grid-area: content;
-  background-color: #eee;
-}
-.footer {
-  grid-area: footer;
-  background-color: #bbb;
-}
+
 h3 {
   text-align: center;
 }
