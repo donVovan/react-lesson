@@ -1,16 +1,20 @@
 import React from "react";
 import s from './Menu.module.css';
+import {NavLink} from "react-router-dom";
 
 const Menu = () => {
-  return <nav className={s.menu}>
-    <ul className={s.list}>
-      <li className={s.item}><a href='/Profile'>Profile</a></li>
-      <li className={s.item}><a href='/Dialogs'>Messages</a></li>
-      <li className={s.item}><a href='/Music'>Music</a></li>
-      <li className={s.item}><a href='/Books'>Books</a></li>
-      <li className={s.item}><a href='/Settings'>Settings</a></li>
-    </ul>
-  </nav>;
+   const activeLink = ({isActive}) => isActive ? s.activeLink : s.item;
+    return (
+        <nav className={s.menu}>
+            <ul className={s.list}>
+                <li className={s.item}><NavLink to='/Profile' className={activeLink}>Profile</NavLink></li>
+                <li className={s.item}><NavLink to='/Dialogs' className={activeLink}>Messages</NavLink></li>
+                <li className={s.item}><NavLink to='/Music' className={activeLink}>Music</NavLink></li>
+                <li className={s.item}><NavLink to='/Books' className={activeLink}>Books</NavLink></li>
+                <li className={s.item}><NavLink to='/Settings' className={activeLink}>Settings</NavLink></li>
+            </ul>
+        </nav>
+    );
 }
 
 export default Menu;

@@ -1,7 +1,19 @@
 .menu {
     grid-area: menu;
     background-color: #ccc;
+    padding: 20px;
 }
 .item {
     color: black;
+}
+.item a {
+    color: #4e5959;
+}
+
+.item a.activeLink {
+    color: coral;
+}
+
+.item a.hover {
+    color: #4e5959;
 }
