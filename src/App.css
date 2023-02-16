@@ -59,7 +59,10 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 80px 5px 80px 5px 1fr 5px 80px 5px 80px;
 }
-
+.grid-container-content {
+    grid-area: content;
+    background-color: #eee;
+}
 h3 {
   text-align: center;
 }
