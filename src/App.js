@@ -20,7 +20,7 @@ const App = (props) => {
                 <div className='grid-container-content'>
                     <Routes>
                         <Route path="/Profile" element={<Profile/>}/>
-                        <Route path="/Dialogs" element={<Dialogs/>}/>
+                        <Route path="/Dialogs/*" element={<Dialogs/>}/>
                         <Route path="/Music" element={<Music/>}/>
                         <Route path="/Books" element={<Books/>}/>
                         <Route path="/Settings" element={<Settings/>}/>
