@@ -5,3 +5,18 @@
 .posts {
     margin-top: 10px;
 }
+
+.btn {
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+}
+.btn:hover {
+    color: #cccccc;
+    background-color: black;
+}
+
+.btn:active {
+    background-color: black;
+    color: coral;
+}

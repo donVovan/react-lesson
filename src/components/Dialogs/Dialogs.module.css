@@ -3,9 +3,13 @@
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 10fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
 .dialogsItems {
+ grid-area: 1 / 1 / 6 / 2;
 }
 .dialogsItems .active {
     color: red;
@@ -14,7 +18,25 @@
 }
 
 .messages {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.textarea {
+    margin-top: 40px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+.message {
+}
+.btn {
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+}
+.btn:hover {
+    color: #cccccc;
+    background-color: black;
 }
 
-.message {
+.btn:active {
+    background-color: black;
+    color: coral;
 }
