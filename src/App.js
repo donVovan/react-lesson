@@ -20,6 +20,7 @@ const App = (props) => {
                 <div className='grid-container-content'>
                     <Routes>
                         <Route path="/Profile"
+                               addPost={props.addPost}
                                element={<Profile state={props.state.profilePage}/>}/>
                         <Route path="/Dialogs/*"
                                element={<Dialogs state={props.state.dialogsPage}/>}/>
