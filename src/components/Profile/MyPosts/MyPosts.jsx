@@ -1,5 +1,5 @@
 import React from "react";
-import s from './MyPosts.module.css';
+import style from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
@@ -11,17 +11,17 @@ let addPost = ()=> {
     let text = newPostElement.current.value;
     props.addPost(text);
 }
-    return <div className={s.postsBlock}>
+    return <div className={style.postsBlock}>
         <h2>My posts</h2>
         <div>
             <div>
                 <textarea ref={newPostElement}></textarea>
             </div>
             <div>
-                <button className={s.btn} onClick={addPost}>Add post</button>
+                <button className={style.btn} onClick={addPost}>Add post</button>
             </div>
         </div>
-        <div className={s.posts}>
+        <div className={style.posts}>
             { postsElements }
         </div>
     </div>
