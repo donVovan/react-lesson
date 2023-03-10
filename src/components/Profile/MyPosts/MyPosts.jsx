@@ -2,15 +2,16 @@ import React from "react";
 import style from './MyPosts.module.css';
 import Post from "./Post/Post";
 
-const MyPosts = (props) => {
-let postsElements = props.posts.map(p => <Post message={p.message} likeCount={p.likesCount}/>);
+const MyPosts = ({posts, addPost}) => {
+let postsElements = posts.map(p => <Post message={p.message} likeCount={p.likesCount}/>);
 
 let newPostElement = React.createRef();
 
-let addPost = ()=> {
+let addNewPost = ()=> {
     let text = newPostElement.current.value;
-    props.addPost(text);
+    addPost(text);
 }
+
     return <div className={style.postsBlock}>
         <h2>My posts</h2>
         <div>
@@ -18,7 +19,7 @@ let addPost = ()=> {
                 <textarea ref={newPostElement}></textarea>
             </div>
             <div>
-                <button className={style.btn} onClick={addPost}>Add post</button>
+                <button className={style.btn} onClick={addNewPost}>Add post</button>
             </div>
         </div>
         <div className={style.posts}>

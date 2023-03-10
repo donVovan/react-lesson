@@ -3,17 +3,12 @@
     background-color: #ccc;
     padding: 20px;
 }
-.item {
-    color: black;
-}
-.item a {
+
+a {
     color: #4e5959;
 }
 
-.item a.activeLink {
+a.activeLink {
     color: coral;
 }
 
-.item a.hover {
-    color: #4e5959;
-}
