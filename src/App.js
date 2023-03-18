@@ -12,7 +12,7 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 
-const App = ({addPost, state}) => {
+const App = ({addPost, state, updateNewPostText}) => {
     return (
         <BrowserRouter>
             <div className="grid-container">
@@ -20,10 +20,15 @@ const App = ({addPost, state}) => {
                 <div className='grid-container-content'>
                     <Routes>
                         <Route path="/Profile"
-                               addPost={addPost}
-                               element={<Profile state={state.profilePage}/>}/>
+                               element={<Profile
+                                   addPost={addPost}
+                                   updateNewPostText={updateNewPostText}
+                                   profilePage={state.profilePage}/>}
+                        />
                         <Route path="/Dialogs/*"
-                               element={<Dialogs state={state.dialogsPage}/>}/>
+                               element={<Dialogs
+                                   state={state.dialogsPage}/>}
+                        />
                         <Route path="/Music" element={<Music/>}/>
                         <Route path="/Books" element={<Books/>}/>
                         <Route path="/Settings" element={<Settings/>}/>

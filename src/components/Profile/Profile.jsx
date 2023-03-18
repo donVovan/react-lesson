@@ -3,11 +3,16 @@ import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = ({state, addPost}) => {
+const Profile = ({profilePage, addPost, updateNewPostText}) => {
     return (
         <article>
             <ProfileInfo/>
-            <MyPosts posts={state.posts} addPost={addPost}/>
+            <MyPosts
+                posts={profilePage.posts}
+                newPostText={profilePage.newPostText}
+                addPost={addPost}
+                updateNewPostText={updateNewPostText}
+            />
         </article>
     );
 }
