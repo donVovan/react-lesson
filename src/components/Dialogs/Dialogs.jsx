@@ -2,29 +2,30 @@ import React from "react";
 import style from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {type} from "@testing-library/user-event/dist/type";
 
-const Dialogs = ({state, addMessage, dialogsPage, updateNewMessageText}) => {
+const Dialogs = ({state, dialogsPage, dispatch}) => {
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = state.messages.map(m => <Message message={m.message}/>)
 
     let newMessageElement = React.createRef();
 
-    const addNewMessage = () => {
-     addMessage();
+    const addMessage = () => {
+        dispatch({type: 'ADD-MESSAGE'});
     }
 
     const onMessageChange = () => {
-      let text = newMessageElement.current.value;
-      updateNewMessageText(text)
+        let text = newMessageElement.current.value;
+        dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text})
     }
 
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems + ' ' + style.active}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={style.messages}>
-                { messagesElements }
+                {messagesElements}
             </div>
             <div className={style.textarea}>
                 <div>
