@@ -3,6 +3,7 @@ import style from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {type} from "@testing-library/user-event/dist/type";
+import {addMessageActionCreator, updateNewMessageActioCreator} from "../../redux/state";
 
 const Dialogs = ({state, dialogsPage, dispatch}) => {
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
@@ -11,12 +12,12 @@ const Dialogs = ({state, dialogsPage, dispatch}) => {
     let newMessageElement = React.createRef();
 
     const addMessage = () => {
-        dispatch({type: 'ADD-MESSAGE'});
+        dispatch(addMessageActionCreator());
     }
 
     const onMessageChange = () => {
         let text = newMessageElement.current.value;
-        dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text})
+        dispatch(updateNewMessageActioCreator(text));
     }
 
     return (

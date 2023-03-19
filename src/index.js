@@ -4,7 +4,6 @@ import store from "./redux/state";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import './index.css';
-//import {addPost, updateNewPostText, addMessage, updateNewMessageText, subscribe} from "./redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
