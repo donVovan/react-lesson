@@ -5,15 +5,15 @@ import Profile from "./components/Profile/Profile";
 import Menu from "./components/Menu/Menu";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
-import Dialogs from "./components/Dialogs/Dialogs";
 import Music from "./components/Music/Music";
 import Books from "./components/Books/Books";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 
-const App = ({dispatch, state}) => {
+const App = ({store}) => {
     return (
         <BrowserRouter>
             <div className="grid-container">
@@ -22,14 +22,11 @@ const App = ({dispatch, state}) => {
                     <Routes>
                         <Route path="/Profile"
                                element={<Profile
-                                   dispatch={dispatch}
-                                   profilePage={state.profilePage}/>}
+                                   store={store}/>}
                         />
                         <Route path="/Dialogs/*"
-                               element={<Dialogs
-                                   state={state.dialogsPage}
-                                   dispatch={dispatch}
-                                   dialogsPage={state.dialogsPage}
+                               element={<DialogsContainer
+                                   store={store}
                                />}
                         />
                         <Route path="/Music" element={<Music/>}/>
