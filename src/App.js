@@ -12,6 +12,7 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 
+
 const App = ({dispatch, state}) => {
     return (
         <BrowserRouter>
