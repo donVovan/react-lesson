@@ -10,6 +10,7 @@ import Books from "./components/Books/Books";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 
@@ -21,13 +22,13 @@ const App = ({store}) => {
                 <div className='grid-container-content'>
                     <Routes>
                         <Route path="/Profile"
-                               element={<Profile
-                                   store={store}/>}
+                               element={<Profile/>}
+                        />
+                        <Route path="/Users"
+                               element={<UsersContainer />}
                         />
                         <Route path="/Dialogs/*"
-                               element={<DialogsContainer
-                                   store={store}
-                               />}
+                               element={<DialogsContainer/>}
                         />
                         <Route path="/Music" element={<Music/>}/>
                         <Route path="/Books" element={<Books/>}/>
